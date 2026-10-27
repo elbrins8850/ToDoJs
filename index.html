@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoHub</title>
+  <link rel="stylesheet" href="./style (1).css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo" aria-label="TodoHub">
+      <svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#22d3ee"/>
+            <stop offset="1" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <path d="M32 6 L58 32 L32 58 L6 32 Z" fill="none" stroke="url(#g)" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M21 33 L29 41 L45 22" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="32" cy="6" r="4.5" fill="#0b1220" stroke="#22d3ee" stroke-width="3"/>
+        <circle cx="58" cy="32" r="4.5" fill="#0b1220" stroke="#38bdf8" stroke-width="3"/>
+        <circle cx="32" cy="58" r="4.5" fill="#0b1220" stroke="#3b82f6" stroke-width="3"/>
+        <circle cx="6" cy="32" r="4.5" fill="#6366f1" stroke="#6366f1" stroke-width="3"/>
+      </svg>
+      <span class="logo-text">TODO<span class="hub">HUB</span></span>
+    </div>
+
+    <h1 class="page-title">My Tasks</h1>
+    <p class="page-subtitle">Organize your daily tasks</p>
+  </header>
+
+  <main class="main">
+
+    <!-- Add task -->
+    <section class="card">
+      <h2>Add a new tasks</h2>
+
+      <form id="task-form" novalidate>
+        <div class="field">
+          <label for="title">Task title:</label>
+          <input type="text" id="title" placeholder="Enter your task" autocomplete="off">
+          <small class="error" id="title-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="description">Description:</label>
+          <input type="text" id="description" placeholder="Enter your description" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="due-date">Due Date:</label>
+          <input type="date" id="due-date">
+        </div>
+
+        <button type="submit" class="btn-add">Add Task</button>
+      </form>
+    </section>
+
+    <!-- Tasks list -->
+    <section class="card">
+      <h2>My tasks</h2>
+
+      <div class="field">
+        <label for="search">Search tasks:</label>
+        <input type="text" id="search" placeholder="Search by task title. . . ." autocomplete="off">
+      </div>
+
+      <div class="filters" id="filters">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="pending">Pending</button>
+        <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+
+      <ul class="task-list" id="task-list"></ul>
+      <p class="empty" id="empty-msg">No tasks yet. Add your first task!</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
